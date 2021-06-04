@@ -1,4 +1,11 @@
 .headerContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+
+  z-index: 9;
+
   background: transparent;
   height: 6.5rem;
 

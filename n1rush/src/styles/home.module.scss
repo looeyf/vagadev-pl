@@ -1,0 +1,58 @@
+.carouselWrapper {
+  position: relative;
+
+  .carousel {
+    svg {
+      color: var(--white);
+      font-size: 1.5rem;
+      z-index: 1;
+    }
+
+    .nextArrow {
+      position: absolute;
+      right: -12px;
+      bottom: 27%;
+      transform: translate(0, -50%);
+      width: 3.937rem !important;
+    }
+
+    .previousArrow {
+      position: absolute;
+      right: 12px;
+      bottom: 27%;
+      transform: translate(0, -50%);
+      width: 3.937rem !important;
+    }
+  }
+
+  .carouselController {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 3.937rem;
+    height: 24rem;
+    border-bottom: 5.25rem solid var(--dark-blue);
+    background: var(--blue);
+
+    color: var(--white);
+    font: 400 0.945rem roboto, sans-serif;
+    text-transform: uppercase;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 1.2rem 0;
+
+    span {
+      width: 1px;
+      height: 4.812rem;
+      background: var(--white);
+
+      margin-top: auto;
+    }
+  }
+}
