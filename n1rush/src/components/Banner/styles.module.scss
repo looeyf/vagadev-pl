@@ -1,0 +1,79 @@
+.carouselWrapper {
+  position: relative;
+
+  .carouselControllerWrapper {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    font: 400 0.875rem roboto, sans-serif;
+    color: var(--white);
+
+    div {
+      display: flex;
+    }
+
+    .title {
+      width: 3.937rem;
+      height: 18.75rem;
+
+      background: var(--blue);
+      padding: 1.2rem 0;
+
+      text-transform: uppercase;
+      writing-mode: vertical-lr;
+      text-orientation: mixed;
+
+      align-items: center;
+      justify-content: flex-start;
+
+      span {
+        width: 1px;
+        height: 4.812rem;
+        background: var(--white);
+
+        margin-top: auto;
+      }
+    }
+
+    .controls {
+      width: 3.937rem;
+      height: 5.25rem;
+
+      background: var(--dark-blue);
+      border-radius: 0 0 0 0.5rem;
+
+      padding: 1.8rem 0 1.2rem 0;
+
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      div {
+        margin-top: 0.2rem;
+      }
+
+      button {
+        border: none;
+        background: none;
+        color: var(--white);
+
+        font-size: 1.4rem;
+
+        &:not(:disabled):hover {
+          filter: brightness(0.75);
+        }
+
+        &:disabled {
+          opacity: 0.4;
+          cursor: default;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}

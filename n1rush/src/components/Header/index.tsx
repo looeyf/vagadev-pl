@@ -6,18 +6,20 @@ import styles from './styles.module.scss';
 
 export default function Header() {
   return (
-    <header className={styles.headerContainer}>
-      <HiMenuAlt2 />
-      <img src="/logo.png" alt="N1 Rush" />
+    <div className="container">
+      <header className={styles.headerContainer}>
+        <HiMenuAlt2 />
+        <img src="/logo.png" alt="N1 Rush" />
 
-      <IoMdPaperPlane style={{ marginLeft: 'auto' }} />
-      <span>Contato</span>
+        <IoMdPaperPlane style={{ marginLeft: 'auto' }} />
+        <span>Contato</span>
 
-      <HiOutlineSearch className={styles.searchIcon} />
-      <span>Buscar</span>
+        <HiOutlineSearch className={styles.searchIcon} />
+        <span>Buscar</span>
 
-      <HiOutlineShoppingBag />
-      <div>2</div>
-    </header>
+        <HiOutlineShoppingBag />
+        <div>2</div>
+      </header>
+    </div>
   )
 }
