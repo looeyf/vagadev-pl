@@ -21,10 +21,30 @@ export default function Banner() {
       <div className={styles.carouselWrapper}>
         <Slider>
           <Slide index={0}>
-            <Image hasMasterSpinner src="./mortal-kombat.jfif" alt="Mortal Kombat" />
+            {/* <Image hasMasterSpinner src="./mortal-kombat.jfif" alt="Mortal Kombat" /> */}
+            <div className={styles.slideImage} style={{background: "url('./mortal-kombat.jfif')"}}>
+              <div className="container">
+                <h2>Mortal Kombat</h2>
+                <h4>R$ 299 <span>,99</span></h4>
+                <p>Mortal Kombat X combina uma apresentação cinemática única com uma jogabilidade totalmente nova.
+                  Os jogadores podem escolher pela primeira vez diversas variantes de cada personagem, afetando tanto a
+                  estratégia como o estilo de luta.
+                </p>
+              </div>
+            </div>
           </Slide>
           <Slide index={1}>
-            <Image hasMasterSpinner src="./rdr2.jfif" alt="Red Dead Redemption 2" />
+            {/* <Image hasMasterSpinner src="./rdr2.jfif" alt="Red Dead Redemption 2" /> */}
+            <div className={styles.slideImage} style={{background: "url('./rdr2.jfif')"}}>
+              <div className="container">
+                <h2>Mortal Kombat</h2>
+                <h4>R$ 299 <span>,99</span></h4>
+                <p>Mortal Kombat X combina uma apresentação cinemática única com uma jogabilidade totalmente nova.
+                  Os jogadores podem escolher pela primeira vez diversas variantes de cada personagem, afetando tanto a
+                  estratégia como o estilo de luta.
+                </p>
+              </div>
+            </div>
           </Slide>
         </Slider>
 

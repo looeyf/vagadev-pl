@@ -6,14 +6,39 @@
   transform: translate(0, -30%);
 
   .middleBannerWrapper {
+    object-fit: cover;
     display: flex;
+    flex-direction: column;
     overflow: hidden;
     flex: 1;
 
     img {
-      max-height: 25rem;
-      width: auto;
       height: auto;
+      max-width: 100%;
+      vertical-align: middle;
+      object-fit: cover;
+    }
+
+    div {
+      color: var(--dark-blue);
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      justify-content: flex-start;
+
+      background: var(--blue);
+      border-left: 0.6rem solid var(--dark-blue);
+      padding: 0.9rem;
+
+      border-radius: 0 0 0.3rem 0.3rem;
+
+      span {
+        height: 1px;
+        flex: 1;
+        background: var(--dark-blue);
+
+        margin-left: auto;
+      }
     }
   }
 }
