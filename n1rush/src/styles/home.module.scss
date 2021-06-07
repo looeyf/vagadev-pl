@@ -1,9 +1,19 @@
+.homeWrapper {
+  section + section {
+    transform: translate(0, -7rem);
+    margin-bottom: 4rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .middleBannerContainer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
-
-  transform: translate(0, -30%);
 
   .middleBannerWrapper {
     object-fit: cover;
@@ -38,6 +48,94 @@
         background: var(--dark-blue);
 
         margin-left: auto;
+      }
+    }
+  }
+}
+
+.gameTipsContainer {
+  .selectWrapper {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 4rem;
+
+    h2 {
+      margin-bottom: 0;
+    }
+
+    .selectField {
+      width: 15.625rem;
+
+      div {
+        color: var(--black);
+        border-color: var(--dark-blue);
+      }
+
+      svg {
+        color: var(--dark-blue);
+      }
+
+      span {
+        width: 0;
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: flex;
+      padding: 0.6rem;
+      flex-basis: 100%;
+
+      @media (min-width: 40rem) {
+        flex-basis: 50%;
+      }
+
+      @media (min-width: 56rem) {
+        flex-basis: 25%;
+      }
+
+      .card {
+        .cardImage {
+          position: relative;
+
+          div {
+            position: absolute;
+            top: 0;
+            right: 4%;
+
+            background: var(--blue);
+            border: 2px solid var(--dark-blue);
+            border-radius: 0.312rem;
+
+            font-weight: 900;
+            font-size: 2.25rem;
+            padding: 0.4rem 1rem;
+
+            transform: translate(0, -50%);
+            overflow: visible !important;
+
+            @supports (-webkit-text-stroke: 2px var(--dark-blue)) {
+              span {
+                -webkit-text-stroke: 2px var(--dark-blue);
+                -webkit-text-fill-color: var(--white);
+              }
+            }
+          }
+
+          img {
+            height: auto;
+            max-width: 100%;
+            vertical-align: middle;
+          }
+        }
       }
     }
   }

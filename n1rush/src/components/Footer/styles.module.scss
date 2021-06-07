@@ -1,0 +1,33 @@
+.footerContainer {
+  display: flex;
+  align-items: center;
+
+  div {
+    height: 3.125rem;
+
+    &:first-child {
+      flex-basis: 25%;
+      background: var(--dark-blue);
+      background-image: url('/logo_footer.png');
+      background-repeat: no-repeat;
+      background-position-x: right;
+      background-position-y: center;
+      border-right: 2rem solid transparent;
+    }
+
+    & + div {
+      display: flex;
+      flex-basis: 75%;
+      align-items: center;
+      padding-left: 2rem;
+
+      background: var(--blue);
+
+      span {
+        font-weight: 400;
+        font-size: 0.875rem;
+        color: var(--white);
+      }
+    }
+  }
+}

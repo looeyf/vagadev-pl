@@ -122,3 +122,91 @@
     }
   }
 }
+
+// Daqui para baixo são regras exclusivas para responsividade
+/* Desktops and laptops ----------- */
+@media only screen and (max-width: 1224px) {
+  .carouselWrapper {
+    .slideImage {
+      div {
+        h2 {
+          margin-top: 2rem;
+          font-size: 2.2rem;
+        }
+
+        h4 {
+          font-size: 3.37rem;
+        }
+
+        span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (max-device-width: 1024px) {
+  .carouselWrapper {
+    .slideImage {
+      div {
+        padding-bottom: 1rem;
+
+        h2 {
+          margin-top: 4rem;
+        }
+
+        p {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .carouselControllerWrapper {
+      position: static;
+      transform: translate(0, 0);
+      display: flex;
+
+      .title {
+        flex: 6;
+        height: auto;
+        padding: 0 1.2rem;
+        writing-mode: horizontal-tb;
+        border-radius: 0 0 0 0.5rem;
+
+        span {
+          width: 100%;
+          height: 1px;
+
+          margin-left: auto;
+          margin-top: 0;
+        }
+      }
+
+      .controls {
+        flex: 1;
+        flex-direction: row;
+        border-radius: 0;
+        gap: 0.6rem;
+        height: 3.25rem;
+        padding: 0;
+      }
+    }
+  }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-device-width: 767px) {
+  .carouselWrapper {
+    li {
+      padding-bottom: 55.875% !important;
+    }
+
+    .carouselControllerWrapper {
+      .title {
+        flex: 2;
+      }
+    }
+  }
+}

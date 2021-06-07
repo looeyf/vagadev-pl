@@ -1,0 +1,107 @@
+.shelfCarouselWrapper {
+  position: relative;
+
+  .item {
+    display: flex;
+    padding: 1.6rem;
+
+    .card {
+      border-radius: 0.3rem;
+      box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+
+      .cardImage {
+        background: var(--white);
+        border-bottom: 2px solid var(--blue);
+        padding: 1rem 0;
+
+        img {
+          height: auto;
+          max-width: 100%;
+          vertical-align: middle;
+        }
+      }
+
+      .cardContent {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        padding: 2rem;
+        color: var(--dark-blue);
+        font-weight: 900;
+        line-height: 1.312rem;
+        font-size: 1.125rem;
+
+        text-transform: capitalize;
+
+        h3 {
+          font-weight: 400;
+          font-size: 0.875rem;
+          line-height: 1rem;
+        }
+
+        button {
+          color: var(--white);
+          background: var(--blue);
+          border: none;
+          border-radius: 0.25rem;
+          padding: 1rem 5rem;
+          font-weight: 900;
+          line-height: 1.312rem;
+          font-size: 1.125rem;
+          text-transform: uppercase;
+
+          transition: filter 0.2s ease;
+
+          &:last-child {
+            align-self: center;
+          }
+
+          &:hover {
+            filter: brightness(0.95);
+          }
+        }
+      }
+    }
+  }
+
+  .controls {
+    button {
+      border: none;
+      background: none;
+      color: var(--dark-blue);
+
+      font-size: 2rem;
+
+      &:not(:disabled):hover {
+        filter: brightness(0.75);
+      }
+
+      &:disabled {
+        opacity: 0.4;
+        cursor: default;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .backButton {
+      position: absolute;
+      left: -1.8rem;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+
+    .nextButton {
+      position: absolute;
+      right: -1.8rem;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+}
