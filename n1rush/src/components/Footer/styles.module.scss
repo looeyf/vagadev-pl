@@ -31,3 +31,18 @@
     }
   }
 }
+
+// responsivo abaixo
+@media only screen and (max-device-width: 420px) {
+  .footerContainer {
+    div {
+      &:first-child {
+        border-right: 1rem solid transparent;
+      }
+
+      & + div {
+        padding-left: 1rem;
+      }
+    }
+  }
+}

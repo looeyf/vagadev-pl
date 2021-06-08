@@ -1,3 +1,5 @@
+import ImgCrop from 'next/image';
+
 import Banner from '../components/Banner';
 import Shelf from '../components/Shelf';
 import Select from 'react-select';
@@ -21,18 +23,29 @@ export default function Home() {
       </section>
 
       <section className={`container ${styles.middleBannerContainer}`}>
-        {/* aqui fazer a mesma coisa que fiz com o banner, criar componente tipar, e aqui só envio nas props as infos como obj */}
         <div className={styles.middleBannerWrapper}>
-          <img src="/zelda_banner.png" alt="Zelda"/>
-          <div>
+          <ImgCrop
+            width={627}
+            height={368}
+            src={"/zelda_banner.png"}
+            alt={"Zelda"}
+            objectFit="cover"
+          />
+          <div className={styles.gameTitle}>
             <p>The Legend of Zelda: Breath of the wild</p>
             <span />
           </div>
         </div>
 
         <div className={styles.middleBannerWrapper}>
-          <img src="/sekiro_banner.png" alt="Sekiro"/>
-          <div>
+          <ImgCrop
+            width={627}
+            height={368}
+            src={"/sekiro_banner.png"}
+            alt={"SEKIRO - Shadows Die Twice"}
+            objectFit="cover"
+          />
+          <div className={styles.gameTitle}>
             <p>SEKIRO - Shadows Die Twice</p>
             <span />
           </div>
@@ -55,8 +68,14 @@ export default function Home() {
             <li>
               <div className={styles.card}>
                 <div className={styles.cardImage}>
-                  <img src="/crossout_game_tips.png" alt="Outriders" />
-                  <div>
+                  <ImgCrop
+                    width={303}
+                    height={174}
+                    src={"/crossout_game_tips.png"}
+                    alt={"Crossout"}
+                    objectFit="cover"
+                  />
+                  <div className={styles.tipNumber}>
                     <span>1</span> 
                   </div>
                 </div>
@@ -65,8 +84,14 @@ export default function Home() {
             <li>
               <div className={styles.card}>
                 <div className={styles.cardImage}>
-                  <img src="/crossout_game_tips.png" alt="Outriders" />
-                  <div>
+                  <ImgCrop
+                    width={303}
+                    height={174}
+                    src={"/crossout_game_tips.png"}
+                    alt={"Crossout"}
+                    objectFit="cover"
+                  />
+                  <div className={styles.tipNumber}>
                     <span>2</span> 
                   </div>
                 </div>
@@ -75,8 +100,14 @@ export default function Home() {
             <li>
               <div className={styles.card}>
                 <div className={styles.cardImage}>
-                  <img src="/crossout_game_tips.png" alt="Outriders" />
-                  <div>
+                  <ImgCrop
+                    width={303}
+                    height={174}
+                    src={"/crossout_game_tips.png"}
+                    alt={"Crossout"}
+                    objectFit="cover"
+                  />
+                  <div className={styles.tipNumber}>
                     <span>3</span>
                   </div>
                 </div>
@@ -85,8 +116,14 @@ export default function Home() {
             <li>
               <div className={styles.card}>
                 <div className={styles.cardImage}>
-                  <img src="/crossout_game_tips.png" alt="Outriders" />
-                  <div>
+                  <ImgCrop
+                    width={303}
+                    height={174}
+                    src={"/crossout_game_tips.png"}
+                    alt={"Crossout"}
+                    objectFit="cover"
+                  />
+                  <div className={styles.tipNumber}>
                     <span>4</span> 
                   </div>
                 </div>

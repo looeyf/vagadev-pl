@@ -29,8 +29,7 @@
       object-fit: cover;
     }
 
-    div {
-      color: var(--dark-blue);
+    .gameTitle {
       display: flex;
       gap: 1.2rem;
       align-items: center;
@@ -39,6 +38,9 @@
       background: var(--blue);
       border-left: 0.6rem solid var(--dark-blue);
       padding: 0.9rem;
+      color: var(--dark-blue);
+      font-weight: 700;
+      font-size: 1rem;
 
       border-radius: 0 0 0.3rem 0.3rem;
 
@@ -106,7 +108,7 @@
         .cardImage {
           position: relative;
 
-          div {
+          .tipNumber {
             position: absolute;
             top: 0;
             right: 4%;
@@ -136,6 +138,70 @@
             vertical-align: middle;
           }
         }
+      }
+    }
+  }
+}
+
+// a partir daqui css responsivo
+/* Desktops and laptops ----------- */
+@media only screen and (max-width: 1224px) {
+  .homeWrapper {
+    section + section {
+      transform: translate(0, 0);
+      margin-bottom: 4rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .middleBannerContainer {
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 896px) and (max-device-width: 1224px) {
+  .gameTipsContainer {
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-device-width: 895px) {
+  .gameTipsContainer {
+    ul {
+      li {
+        margin-bottom: 2rem;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 768px) {
+  .homeWrapper {
+    .middleBannerContainer {
+      .middleBannerWrapper {
+        flex: 0 1 auto;
+
+        div {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-device-width: 640px) {
+  .gameTipsContainer {
+    .selectWrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+
+      .selectField {
+        width: 100%;
       }
     }
   }

@@ -1,26 +1,43 @@
-import { CarouselProvider, Slider, Slide, Image, ButtonBack, ButtonNext  } from 'pure-react-carousel';
-import {HiOutlineChevronLeft, HiOutlineChevronRight} from 'react-icons/hi';
+import { useState, useEffect } from 'react';
+import ImgCrop from 'next/image';
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext  } from 'pure-react-carousel';
+import { useMediaQuery } from "react-responsive";
 
+import {HiOutlineChevronLeft, HiOutlineChevronRight} from 'react-icons/hi';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import styles from './styles.module.scss'
 
 export default function Shelf() {
-  const shelfCarouselSettings = {
-    visibleSlides: 3,
-    totalSlides: 4,
-    naturalSlideWidth: 350,
-    naturalSlideHeight: 602,
-  };
+  const [slideCount, setSlideCount] = useState(3)
+  const isDesktop = useMediaQuery({ query: "(min-device-width: 1024px)", });
+  const isTablet = useMediaQuery({ query: "(min-device-width: 600px)", });
+
+  useEffect(() => {
+    setSlideCount(isDesktop ? 3 : isTablet ? 2 : 1);
+  }, [isDesktop, isTablet])
 
   return (
-    <CarouselProvider {...shelfCarouselSettings}>
+    <CarouselProvider
+      visibleSlides={slideCount}
+      totalSlides={4}
+      naturalSlideWidth={350}
+      naturalSlideHeight={602}
+
+      infinite
+    >
       <div className={styles.shelfCarouselWrapper}>
         <Slider>
           <Slide index={0}>
             <div className={styles.item}>
               <div className={styles.card}>
                 <div className={styles.cardImage}>
-                  <Image hasMasterSpinner src="/outriders_shelf.png" alt="Outriders" />
+                  <ImgCrop
+                    width={350}
+                    height={362}
+                    src={"/outriders_shelf.png"}
+                    alt={"Outriders"}
+                    objectFit="cover"
+                  />
                 </div>
 
                 <div className={styles.cardContent}>
@@ -36,7 +53,13 @@ export default function Shelf() {
             <div className={styles.item}>
               <div className={styles.card}>
                 <div className={styles.cardImage}>
-                  <Image hasMasterSpinner src="/cyberpunk_shelf.png" alt="Cyberpunk 2077" />
+                  <ImgCrop
+                    width={350}
+                    height={362}
+                    src={"/cyberpunk_shelf.png"}
+                    alt={"Cyberpunk 2077"}
+                    objectFit="cover"
+                  />
                 </div>
 
                 <div className={styles.cardContent}>
@@ -52,7 +75,13 @@ export default function Shelf() {
             <div className={styles.item}>
               <div className={styles.card}>
                 <div className={styles.cardImage}>
-                  <Image hasMasterSpinner src="/donkeykong_shelf.png" alt="Donkey Kong Country Tropical Freeze" />
+                  <ImgCrop
+                    width={350}
+                    height={362}
+                    src={"/donkeykong_shelf.png"}
+                    alt={"Donkey Kong Country Tropical Freeze"}
+                    objectFit="cover"
+                  />
                 </div>
 
                 <div className={styles.cardContent}>
@@ -68,7 +97,13 @@ export default function Shelf() {
             <div className={styles.item}>
               <div className={styles.card}>
                 <div className={styles.cardImage}>
-                  <Image hasMasterSpinner src="/donkeykong_shelf.png" alt="Donkey Kong Country Tropical Freeze" />
+                  <ImgCrop
+                    width={350}
+                    height={362}
+                    src={"/donkeykong_shelf.png"}
+                    alt={"Donkey Kong Country Tropical Freeze"}
+                    objectFit="cover"
+                  />
                 </div>
 
                 <div className={styles.cardContent}>

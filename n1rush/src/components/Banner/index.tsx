@@ -37,12 +37,14 @@ export default function Banner() {
           <Slide index={1}>
             <div className={styles.slideImage} style={{background: "url('./rdr2.jfif')"}}>
               <div className="container">
-                <h2>Mortal Kombat</h2>
-                <h4>R$ 299 <span>,99</span></h4>
-                <p>Mortal Kombat X combina uma apresentação cinemática única com uma jogabilidade totalmente nova.
-                  Os jogadores podem escolher pela primeira vez diversas variantes de cada personagem, afetando tanto a
-                  estratégia como o estilo de luta.
-                </p>
+                <div className={styles.overlayMobile}>
+                  <h2>Mortal Kombat</h2>
+                  <h4>R$ 299 <span>,99</span></h4>
+                  <p>Mortal Kombat X combina uma apresentação cinemática única com uma jogabilidade totalmente nova.
+                    Os jogadores podem escolher pela primeira vez diversas variantes de cada personagem, afetando tanto a
+                    estratégia como o estilo de luta.
+                  </p>
+                </div>
               </div>
             </div>
           </Slide>

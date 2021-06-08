@@ -85,6 +85,13 @@ button {
 }
 
 // Daqui para baixo são regras exclusivas para responsividade
+/* Desktops and laptops ----------- */
+@media only screen and (max-width: 1224px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (max-device-width: 1024px) {
   .container {
@@ -92,9 +99,18 @@ button {
   }
 }
 
-/* Desktops and laptops ----------- */
-@media only screen and (min-device-width: 1025px) and (max-width: 1224px) {
-  .container {
-    max-width: 80%;
+@media only screen and (max-width: 768px) {
+  .sectionTitle {
+    font-size: 1.125rem;
+
+    &:before {
+      display: block;
+      content: ' ';
+      background-image: url('/title_anchor.svg');
+      background-size: 1.125rem 1.125rem;
+      height: 1.125rem;
+      width: 1.125rem;
+      margin-right: 1rem;
+    }
   }
 }

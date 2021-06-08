@@ -105,3 +105,16 @@
     }
   }
 }
+
+@media only screen and (max-device-width: 600px) {
+  .shelfCarouselWrapper {
+    .controls {
+      .backButton {
+        left: 0;
+      }
+      .nextButton {
+        right: 0;
+      }
+    }
+  }
+}
