@@ -20,6 +20,8 @@
 
 O desafio consiste em replicar o layout da seguinte aplicação [URL](https://www.figma.com/file/fcy8mdkluclGRQ4GqaVObN/Avalia%C3%A7%C3%A3o-Front-end-PLENO?node-id=1202%3A0). A mesma deve atender a todos os detalhes, deve ser responsivo, buscar dados via requisição e utilizar contextos para poder utilizar estados globais entre os componentes da aplicação.
 
+Para me organizar, criei um [quadro](https://trello.com/b/HkyGZk2W/template-kanban) no trello e utilizei um modelo de kanban para separar as tarefas. Caso queira visualizar o que foi feito, mantive o quadro público, basta clicar no link disponibilizado anteriormente nesta frase.
+
 ---
 
 ## Como funciona
