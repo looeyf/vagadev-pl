@@ -1,42 +1,77 @@
-# Avaliação Front-End PLENO N1 #
+<h1 align="center">
+    Avaliação Front-End PLENO N1
+</h1>
 
-Leia atentamente até o final.
+<h3 align="center">
+    Este repositório contem a solução front-end de um e-commerce proposto como desafio de um processo seletivo realizado pela <a href="https://agencian1.com.br/" target="_blank">Agência N1</a>.
+</h3>
 
-Nossa avaliação tem como foco analisar o candidato no desevolvimento do front-end da página proposta.
-Avaliamos qualidade de código, versionamento, uso de automatizadores, uso de preprocessadores e javascript(vanilla, jquery ou react).
+<h4 align="center"> 
+	 Status: Incompleto
+</h4>
 
-*OBS.: Evite bootstrap e outros similares, pois queremos avaliar o seu código na implementação dos itens.*
+<p align="center">
+ <a href="#sobre">Sobre</a> •
+ <a href="#como-funciona">Como funciona</a> • 
+ <a href="#tech-stack">Tech Stack</a> • 
+</p>
 
-Link do layout a ser desenvolvido: 
-https://www.figma.com/file/fcy8mdkluclGRQ4GqaVObN/Avalia%C3%A7%C3%A3o-Front-end-PLENO?node-id=1202%3A0
+## Sobre
 
-### 01 - O Básico a ser executado para concorrer a vaga ###
-* Fork o repositório e inicie o desevolvimento;
-* Desenvolva o layout com atenção aos detalhes e a responsividade.
+O desafio consiste em replicar o layout da seguinte aplicação [URL](https://www.figma.com/file/fcy8mdkluclGRQ4GqaVObN/Avalia%C3%A7%C3%A3o-Front-end-PLENO?node-id=1202%3A0). A mesma deve atender a todos os detalhes, deve ser responsivo, buscar dados via requisição e utilizar contextos para poder utilizar estados globais entre os componentes da aplicação.
 
-Finalizando esses itens você terá terminado a etapa 01 da avaliação.
+---
 
-*OBS.: Interações e funcionalidades não sugeridas no layout serão levadas em consideração. Atenção aos detalhes do layout.*
+## How it works
 
-### 02 - Elementos de interação ###
-* O banner prinicipal é do tipo slider e possui uma navegação na direita, no crop de desktop, e abaixo do banner, no crop de mobile. Precisamos que ao navegar o nome e a páginação nessa área sejam atualizados. *OBS.: Você não precisa fazer o slider do zero. Utilize plugins como Slick, Owl carousel ou qualquer outro para fazer esse item do projeto*.
+O projeto foi desenvolvido em React, utilizando Next.js para realizar a renderização no server side e também scss para estilização dos componentes.
 
-* Menu. Sempre que clicarmos/ou no hover no ícone de menu hamburguer precisamos exibir o menu. **OBS.:** O menu tem nome de "Nav" e está oculto nas camadas do projeto.
+### Pré-requisitos
 
-* Quando usuário clicar no botão de comprar na prateleira precisamos que exiba o lightbox de produto adicionado e o botão de compra deve ficar sinalizado como item comprado. **OBS.:** O Lightbox tem nome de "Purchase success" e está oculto nas camadas do projeto.
+Antes de começar, você deve conter as seguintes ferramentas instalados em sua máquina:
+[Git](https://git-scm.com/downloads), ultima versão estável do [Node JS](https://nodejs.org/pt-br/download/) (17.17.0 até a presente data).
 
-* Junto com a ação de exibição do lightbox atualize a quantidade de itens na sacola presente na direita header.
+Caso desejar, pode utilizar o [Yarn](https://yarnpkg.com/getting-started/install) no lugar do Node para gerenciar seus pacotes e rodar comandos via shell.
 
-Finalizando esses itens você terá terminado a etapa 02 da avaliação.
+Também é recomendado conter um editor de texto para trabalhar com os códigos, como o [VSCode](https://code.visualstudio.com/)
 
-### 03 - Diferenciando JR de PLENO ###
-* Caso os produtos em destaque tenham sido feitos estáticos, precisamos que modifique para que seus dados venham de uma api ou um JSON e sejam exbidos dinâmicamente na página. Dessa forma, caso eu cadastre um novo produto no JSON a página também o exibirá.
+#### Com tudo instalado, basta realizar os seguintes passos e a aplicação deverá rodar localmente
 
-Temos algumas funcionalidades que estão no layout e precisamos que sejam desenvolvidas:
-* MINICART. Não colocaremos nenhuma obs, pois queremos ver como você desenvolve o layout da melhor maneira possível. Deixamos algumas pegadinha / pontos de melhoria. Outra coisa é que o formulário de cálculo de CEP sempre dará frete grátis, mas a consulta do endereço deve ser dinâmica via API(viacep).
+```bash
 
-* Dicas de Games: Os dados também precisam vir dinâmicos. Precisamos alterar as informações quando clicarmos no select. As opções do select serão: mmorpg, shooter e pvp. Segue a API: https://www.freetogame.com/api-doc.
+# instalar os pacotes React
+$ npm install -g create-react-app
 
-*OBS. 01: O candidato esta livre para trabalhar com a estrutura e tecnologia que preferir, exceto bootstrap e similares.*
 
-*OBS. 02: Finalizando a prova envie o link do fork para o e-mail: rafael.augusto@agencian1.com.br.*
+# Clonar este repositório
+$ git clone https://github.com/looeyf/vagadev-pl.git
+
+# Navegar até a pasta do projeto n1rush
+# Instalar as dependencias do projeto, a primeira opção é para quem está utilizando o Node.js e o segundo para Yarn
+$ npm install
+$ yarn install
+
+# Abrir dois prompts de comando e rodar os seguintes códigos, um em cada janela (manter as janelas abertas enquanto utiliza o projeto)
+$ yarn dev
+$ yarn server
+
+```
+
+Após iniciar o servidor e a aplicação React, você conseguirá visualizar o projeto acessando o seu [localhost](http://localhost:3000/)
+OBS.: Os comandos "yarn dev" e "yarn server" devem ser rodados em prompts separados e mantidos abertos até o fim do uso do projeto.
+
+---
+
+## Tech Stack
+
+As seguintes ferramentas foram utilizadas para construir este projeto:
+
+- **[Node.js](https://nodejs.org/pt-br/)**
+- **[React.js](https://pt-br.reactjs.org)**
+- **[Next.js](https://nextjs.org)**
+- **[Axios](https://www.npmjs.com/package/axios)**
+- **[Pure React Carousel](https://www.npmjs.com/package/pure-react-carousel)**
+- **[React Icons](https://www.npmjs.com/package/react-icons)**
+- **[React Responsive](https://www.npmjs.com/package/react-responsive)**
+- **[React Select](https://www.npmjs.com/package/react-select)**
+- **[SASS](https://www.npmjs.com/package/sass)**
