@@ -24,7 +24,7 @@ O desafio consiste em replicar o layout da seguinte aplicação [URL](https://ww
 
 ## Como funciona
 
-O projeto foi desenvolvido em React, utilizando Next.js para realizar a renderização no server side e também scss para estilização dos componentes.
+O projeto foi desenvolvido em React, utilizando Next.js para realizar a renderização no server side e também SASS para estilização dos componentes.
 
 ### Pré-requisitos
 
