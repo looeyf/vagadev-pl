@@ -3,7 +3,7 @@
 </h1>
 
 <h3 align="center">
-    Este repositório contem a solução front-end de um e-commerce proposto como desafio de um processo seletivo realizado pela <a href="https://agencian1.com.br/" target="_blank">Agência N1</a>.
+    Este repositório contém a solução front-end de um e-commerce proposto como desafio de um processo seletivo realizado pela <a href="https://agencian1.com.br/" target="_blank">Agência N1</a>.
 </h3>
 
 <h4 align="center"> 
@@ -22,7 +22,7 @@ O desafio consiste em replicar o layout da seguinte aplicação [URL](https://ww
 
 ---
 
-## How it works
+## Como funciona
 
 O projeto foi desenvolvido em React, utilizando Next.js para realizar a renderização no server side e também scss para estilização dos componentes.
 
