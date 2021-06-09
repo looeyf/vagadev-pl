@@ -1,19 +1,71 @@
-import ImgCrop from 'next/image';
+import { useState } from 'react';
+import { GetServerSideProps } from 'next'
 
-import Banner from '../components/Banner';
+import ImgCrop from 'next/image';
 import Shelf from '../components/Shelf';
+import Banner from '../components/Banner';
 import Select from 'react-select';
 
+import { api, myApi } from '../services/api';
+
+import { HiOutlineRefresh } from 'react-icons/hi';
 import styles from '../styles/home.module.scss';
 
+type GameTip = {
+  id: number;
+  title: string;
+  thumbnail: string;
+}
 
-export default function Home() {
+type FeaturedGame = {
+  id: number;
+  title: string;
+  price: string;
+  thumbnail: string;
+}
+
+type HomeProps = {
+  gameTips: GameTip[];
+  featuredGames: FeaturedGame[];
+  totalSlides: number;
+}
+
+
+export default function Home({ gameTips, featuredGames, totalSlides }: HomeProps) {
   const options = [
-    { value: 'MMO', label: 'MMO' },
-    { value: 'Race', label: 'Race' },
-    { value: 'Fight', label: 'Fight' },
-    { value: 'Sci-fi', label: 'Sci-fi' },
+    { value: 'mmo', label: 'MMO' },
+    { value: 'mmorpg', label: 'MMORPG' },
+    { value: 'shooter', label: 'Shooter' },
+    { value: 'strategy', label: 'Strategy' },
+    { value: 'racing', label: 'Racing' },
+    { value: 'sports', label: 'Sports' },
+    { value: 'fighting', label: 'Fighting' },
   ]
+
+  const [gameTipList, setGameTipList] = useState(gameTips);
+  const [isLoading, setIsLoading] = useState(false);
+  async function handleSelectChange(genre: string) {
+    setIsLoading(true);
+    const { data } = await api.get('games', {
+      params: {
+        "platform": "pc",
+        "category": genre,
+        "sort-by": "release-date",
+      }
+    });
+
+    const games = data.map(game => {
+      return {
+        id: game.id,
+        title: game.title,
+        thumbnail: game.thumbnail,
+      }
+    })
+
+    const gameTips = games.slice(0, 4);
+    setGameTipList(gameTips);
+    setIsLoading(false);
+  };
 
   return (
     <div className={styles.homeWrapper}>
@@ -54,85 +106,82 @@ export default function Home() {
 
       <section className="container">
         <h2 className="sectionTitle">Produtos em destaque</h2>
-        <Shelf />
+        <Shelf featuredGames={featuredGames} totalSlides={totalSlides} />
       </section>
 
       <section className={`container ${styles.gameTipsContainer}`}>
         <div className={styles.selectWrapper}>
           <h2 className="sectionTitle">Dicas de games</h2>
-          <Select placeholder="Selecione a categoria" className={styles.selectField} options={options} />
+          <Select instanceId="gameCategory" placeholder="Selecione a categoria" className={styles.selectField} options={options} onChange={(e) => {handleSelectChange(e.value)}} />
+          {isLoading ? <HiOutlineRefresh className={styles.spinner} /> : ''}
         </div>
 
         <div className={styles.gamesWrapper}>
           <ul>
-            <li>
-              <div className={styles.card}>
-                <div className={styles.cardImage}>
-                  <ImgCrop
-                    width={303}
-                    height={174}
-                    src={"/crossout_game_tips.png"}
-                    alt={"Crossout"}
-                    objectFit="cover"
-                  />
-                  <div className={styles.tipNumber}>
-                    <span>1</span> 
+            {gameTipList.map((game, index) => {
+              return (
+                <li key={game.id}>
+                <div className={styles.card}>
+                  <div className={styles.cardImage}>
+                    <ImgCrop
+                      width={303}
+                      height={174}
+                      src={game.thumbnail}
+                      alt={game.title}
+                      objectFit="cover"
+                    />
+                    <div className={styles.tipNumber}>
+                      <span>{ index + 1}</span> 
+                    </div>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              <div className={styles.card}>
-                <div className={styles.cardImage}>
-                  <ImgCrop
-                    width={303}
-                    height={174}
-                    src={"/crossout_game_tips.png"}
-                    alt={"Crossout"}
-                    objectFit="cover"
-                  />
-                  <div className={styles.tipNumber}>
-                    <span>2</span> 
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className={styles.card}>
-                <div className={styles.cardImage}>
-                  <ImgCrop
-                    width={303}
-                    height={174}
-                    src={"/crossout_game_tips.png"}
-                    alt={"Crossout"}
-                    objectFit="cover"
-                  />
-                  <div className={styles.tipNumber}>
-                    <span>3</span>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div className={styles.card}>
-                <div className={styles.cardImage}>
-                  <ImgCrop
-                    width={303}
-                    height={174}
-                    src={"/crossout_game_tips.png"}
-                    alt={"Crossout"}
-                    objectFit="cover"
-                  />
-                  <div className={styles.tipNumber}>
-                    <span>4</span> 
-                  </div>
-                </div>
-              </div>
-            </li>
+              </li>
+              )
+            })}
           </ul>
         </div>
       </section>
     </div>
+)}
 
-)
+export const getServerSideProps: GetServerSideProps = async () => {
+  const { data } = await api.get('games', {
+    params: {
+      "platform": "pc",
+      "sort-by": "release-date",
+    }
+  });
+  const games = data.map(game => {
+    return {
+      id: game.id,
+      title: game.title,
+      thumbnail: game.thumbnail,
+    }
+  })
+  const gameTips = games.slice(0, 4);
+
+  const shelf = await myApi.get('featuredGames', {
+    params: {
+      _limit: 10,
+      _sort: "release_date",
+    }
+  });
+  const featuredGames = shelf.data.map(game => {
+    return {
+      id: game.id,
+      title: game.title,
+      price: game.price,
+      thumbnail: game.thumbnail,
+    }
+  })
+  const totalSlides = featuredGames.length;
+
+  return {
+    props: {
+      gameTips,
+      featuredGames,
+      totalSlides
+    },
+  }
 }
+

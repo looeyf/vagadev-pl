@@ -38,11 +38,10 @@ export default function Banner() {
             <div className={styles.slideImage} style={{background: "url('./rdr2.jfif')"}}>
               <div className="container">
                 <div className={styles.overlayMobile}>
-                  <h2>Mortal Kombat</h2>
+                  <h2>Red Dead Redemption 2</h2>
                   <h4>R$ 299 <span>,99</span></h4>
-                  <p>Mortal Kombat X combina uma apresentação cinemática única com uma jogabilidade totalmente nova.
-                    Os jogadores podem escolher pela primeira vez diversas variantes de cada personagem, afetando tanto a
-                    estratégia como o estilo de luta.
+                  <p>Red Dead Redemption 2 é um jogo eletrônico de ação-aventura desenvolvido e publicado pela Rockstar
+                    Games. É o terceiro título da série Red Dead e uma prequela de Red Dead Redemption.
                   </p>
                 </div>
               </div>
