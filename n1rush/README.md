@@ -33,7 +33,7 @@ O projeto foi desenvolvido em React, utilizando Next.js para realizar a renderiz
 Antes de começar, você deve conter as seguintes ferramentas instalados em sua máquina:
 [Git](https://git-scm.com/downloads), ultima versão estável do [Node JS](https://nodejs.org/pt-br/download/) (17.17.0 até a presente data).
 
-Caso desejar, pode utilizar o [Yarn](https://yarnpkg.com/getting-started/install) no lugar do Node para gerenciar seus pacotes e rodar comandos via shell.
+Como o projeto foi desenvolvido em next e não foi buildado a versão de produção para rodar o projeto com "npm start" é necessário utilizar o [Yarn](https://yarnpkg.com/getting-started/install) no lugar do Node para gerenciar seus pacotes e rodar comandos citados neste readme via shell.
 
 Também é recomendado conter um editor de texto para trabalhar com os códigos, como o [VSCode](https://code.visualstudio.com/)
 
@@ -49,8 +49,7 @@ $ npm install -g create-react-app
 $ git clone https://github.com/looeyf/vagadev-pl.git
 
 # Navegar até a pasta do projeto n1rush
-# Instalar as dependencias do projeto, a primeira opção é para quem está utilizando o Node.js e o segundo para Yarn
-$ npm install
+# Instalar as dependencias do projeto
 $ yarn install
 
 # Abrir dois prompts de comando e rodar os seguintes códigos, um em cada janela (manter as janelas abertas enquanto utiliza o projeto)
